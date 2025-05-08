@@ -17,11 +17,11 @@ function App() {
       localStorage.setItem("list",JSON.stringify(newData))
       setTodos(newData)
       setTodo("")
-      toast.success("Data Add Successfully !")
+      toast.success("Task Add Successfully !")
     }
     else{
       e.target.input.focus()
-      toast.error("Please fill this filed")
+      toast.error("Please fill this Filed... 😋")
     }
   }
   const dlt =(index)=>{
@@ -30,7 +30,7 @@ function App() {
     })
     localStorage.setItem("list",JSON.stringify(dltUpdate))
     setTodos(dltUpdate)
-    toast.warning("Data Delete Successfully !")
+    toast.warning("One task is remove... ❌")
   }
   const edit = (index)=>{
     const editUpdate = todos.map((item,i)=>{
@@ -44,7 +44,7 @@ function App() {
     })
     localStorage.setItem("list",JSON.stringify(editUpdate))
     setTodos(editUpdate)
-    toast.info("Data edit successfully !")
+    toast.info("Task is completed... ✔")
     
   }
   return (
@@ -77,7 +77,7 @@ function App() {
             value={todo}
             onChange={(e)=>{setTodo(e.target.value)}}
             className="form-control text-black"
-            placeholder="Naya task likho..."
+            placeholder="Add new task..."
             style={{ backgroundColor: "#fff", border: "none"  }}
             />
           <button className="btn btn-warning">
